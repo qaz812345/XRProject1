@@ -6,12 +6,14 @@ public class MyCloseTrigger : MonoBehaviour
 {
     public MyDoorController DoorController;
 
+    public MyCharacterController characterController;
+
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Out NPC");
+
         if(other.tag.Equals("NPC")){
-            Debug.Log("In NPC");
             DoorController.isOpen = false;
+            characterController.CanMove = true;
         }
     }
 }
