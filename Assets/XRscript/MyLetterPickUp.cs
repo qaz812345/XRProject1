@@ -5,6 +5,7 @@ using UnityEngine;
 public class MyLetterPickUp : MonoBehaviour
 {
     private bool canPick = true;
+    private bool picked = false;
 
     private AudioSource _aduio; 
 
@@ -12,11 +13,13 @@ public class MyLetterPickUp : MonoBehaviour
 
     public GameObject letterUI;
     public GameObject backGroundUI;
+
+    public MyControllerInput controllerInput;
     
 
     public MyFadeOutController fadeOutController;
     public float FadeOutDelay;
-     void Start()
+    void Start()
     {
         _aduio = GetComponent<AudioSource>();
     }
@@ -28,6 +31,7 @@ public class MyLetterPickUp : MonoBehaviour
                 hintUI.SetActive(true);
             }
             if(other.GetComponent<MyControllerInput>().sideButtonState_bool){
+                controllerInput = other.GetComponent<MyControllerInput>();
                 if(_aduio != null){
                     _aduio.Play();
                 }
@@ -35,7 +39,7 @@ public class MyLetterPickUp : MonoBehaviour
                 letterUI.SetActive(true);
                 backGroundUI.SetActive(true);
                 canPick = false;
-                StartCoroutine(FadeOut());
+                picked = true;
             }
         }
     }
@@ -47,8 +51,13 @@ public class MyLetterPickUp : MonoBehaviour
         }
     }
 
-    IEnumerator FadeOut(){  
-        yield return new WaitForSeconds(FadeOutDelay);
-        fadeOutController.isStart = true;
+   
+    void Update()
+    {
+        if(picked == true && controllerInput.GetComponent<MyControllerInput>().sideButtonState_bool){
+            fadeOutController.isStart = true;
+        }
     }
+
+   
 }

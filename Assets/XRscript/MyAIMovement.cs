@@ -21,7 +21,7 @@ public class MyAIMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _anim.SetFloat("speed", _agent.velocity.magnitude);
+        //_anim.SetFloat("speed", _agent.velocity.magnitude);
         if(StartMove){
             _agent.SetDestination (target.transform.position);
         }

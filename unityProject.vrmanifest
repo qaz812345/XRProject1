@@ -2,7 +2,7 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.xrtest2.exe",
+      "app_key": "application.generated.unity.steamvr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
       "action_manifest_path": "E:\\XR project\\XRProject1\\Assets\\StreamingAssets\\SteamVR\\actions.json",

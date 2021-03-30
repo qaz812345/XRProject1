@@ -16,6 +16,7 @@ public class MyFadeOutController : MonoBehaviour
     private Color _black;
     private float _accTime;
     private bool _isSwiched;
+
     // Start is called before the first frame update
     void Start()
     {

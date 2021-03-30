@@ -25,7 +25,8 @@ public class MyCharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = initPos;
+        //transform.position = initPos;
+        Camera.main.transform.localPosition = Vector3.zero;
         _camera = Camera.main;
         if(subtitle != null){
             subtitle.EndTalkHandler += StartCanMove;
