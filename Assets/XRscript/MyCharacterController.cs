@@ -26,7 +26,7 @@ public class MyCharacterController : MonoBehaviour
     void Start()
     {
         //transform.position = initPos;
-        Camera.main.transform.localPosition = Vector3.zero;
+        //Camera.main.transform.localPosition = Vector3.zero;
         _camera = Camera.main;
         if(subtitle != null){
             subtitle.EndTalkHandler += StartCanMove;
@@ -51,4 +51,6 @@ public class MyCharacterController : MonoBehaviour
             transform.position +=  cameraPlanarRotation * _moveDir * Time.deltaTime * movementSpeed;
         }
     }
+
+   
 }

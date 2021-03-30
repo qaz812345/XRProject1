@@ -11,6 +11,8 @@ public class MyCarDoor : MonoBehaviour
 
      public MyFadeOutController FadeOut;
 
+     public AudioSource openDoorSFX;
+
     void OnTriggerStay(Collider other)
     {
         if(canPick && other.tag.Equals("Hand")){
@@ -22,10 +24,13 @@ public class MyCarDoor : MonoBehaviour
                     _aduio.Play();
                 }
                 hintUI.SetActive(false); 
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
                 canPick = false;
                 if(FadeOut != null){
                     FadeOut.isStart = true;
+                }
+                if(openDoorSFX != null){
+                    openDoorSFX.Play();
                 }
 
             }

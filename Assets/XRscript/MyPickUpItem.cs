@@ -13,6 +13,8 @@ public class MyPickUpItem : MonoBehaviour
 
     public MyDoorController DoorController;
 
+    public AudioSource source;
+
     void Start()
     {
         _aduio = GetComponent<AudioSource>();
@@ -37,6 +39,9 @@ public class MyPickUpItem : MonoBehaviour
                 }
                 if(DoorController != null){
                     DoorController.isOpen = true;
+                }
+                if(source != null){
+                    source.Play();
                 }
             }
         }
