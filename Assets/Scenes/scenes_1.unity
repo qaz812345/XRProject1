@@ -4012,12 +4012,12 @@ PrefabInstance:
     - target: {fileID: 6686600236695371829, guid: f2c8ae71974c50e4fa6c76144f3a019e,
         type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "\u56E0\u70BA\u8CBB\u5357\u5148\u751F\u7684\u75C5\u60C5\u60E1\u5316\uFF0C\u73FE\u5728\u6B63\u5728\u624B\u8853\u5BA4\u9032\u884C\u6025\u6551\u4E2D"
+      value: "\u56E0\u70BA\u8CBB\u5357\u5148\u751F\u7684\u75C5\u60C5\u60E1\u5316\uFF0C\u73FE\u5728\u6B63\u5728\u624B\u8853\u623F\u9032\u884C\u6025\u6551\u4E2D"
       objectReference: {fileID: 0}
     - target: {fileID: 6686600236695371829, guid: f2c8ae71974c50e4fa6c76144f3a019e,
         type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "\u5982\u679C\u65B9\u4FBF\u7684\u8A71\uFF0C\u9EBB\u7169\u60A8\u99AC\u4E0A\u4F86\u91AB\u9662\u4E00\u8D9F"
+      value: "\u5982\u679C\u65B9\u4FBF\u7684\u8A71\uFF0C\u9EBB\u7169\u60A8\u73FE\u5728\u4F86\u91AB\u9662\u4E00\u8D9F"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c8ae71974c50e4fa6c76144f3a019e, type: 3}
