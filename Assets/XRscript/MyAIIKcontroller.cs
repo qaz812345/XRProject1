@@ -34,6 +34,17 @@ public class MyAIIKcontroller : MonoBehaviour
 
     private bool IsStartTalk = false;
 
+    public bool IsLookAt = false;
+
+    private float currentWeight = 0.0f;
+
+    public float LerpSpeed = 3f;
+
+     public float LerpOutSpeed = 3f;
+
+    
+ 
+
     void Start () 
     {
         animator = GetComponent<Animator>();
@@ -108,10 +119,7 @@ public class MyAIIKcontroller : MonoBehaviour
             if(ikActive) {
 
                 // Set the look target position, if one has been assigned
-                if(lookObj != null) {
-                    animator.SetLookAtWeight(ikWeight);
-                    animator.SetLookAtPosition(lookObj.position);
-                }    
+              
 
                 // Set the right hand target position and rotation, if one has been assigned
                 if(rightHandObj != null) {
@@ -136,8 +144,25 @@ public class MyAIIKcontroller : MonoBehaviour
                 animator.SetIKRotationWeight(AvatarIKGoal.RightHand,0); 
                 animator.SetIKPositionWeight(AvatarIKGoal.LeftHand,0);
                 animator.SetIKRotationWeight(AvatarIKGoal.LeftHand,0); 
-                animator.SetLookAtWeight(0);
             }
+        }
+
+        if(IsLookAt){
+             if(currentWeight < 0.75f){
+                 currentWeight += Time.deltaTime* LerpSpeed;
+             }else{
+                 currentWeight = 0.75f;
+             }
+        }else{
+              if(currentWeight >= 0.0f){
+                 currentWeight -= Time.deltaTime* LerpOutSpeed;
+             }else{
+                 currentWeight = 0.0f;
+             }
+        }
+        if(lookObj != null){
+        animator.SetLookAtWeight(currentWeight);
+        animator.SetLookAtPosition(lookObj.transform.position);
         }
     }
 

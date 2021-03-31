@@ -15,6 +15,9 @@ public class MyCharacterDrivign : MonoBehaviour
 
     private bool firstSongEnd = false;
     private bool secondSongEnd = false;
+
+    public AudioSource noise;
+     public AudioSource turnOff;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,12 @@ public class MyCharacterDrivign : MonoBehaviour
 
     public void StopRadio(){
         _audio.Stop();
+        if(noise != null){
+            noise.Play();
+        }
+        if(turnOff != null){
+            turnOff.Play();
+        }
         // _audio.clip = (clips[1]);
         // _audio.time = 0;
         // _audio.Play();

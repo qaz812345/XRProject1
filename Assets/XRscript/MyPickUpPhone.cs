@@ -26,6 +26,8 @@ public class MyPickUpPhone : MonoBehaviour
     private MyRingController _ringController;
     private bool canPick = false;
 
+    public AudioSource pickUpSFX;
+
 
 
     void Start()
@@ -79,6 +81,7 @@ public class MyPickUpPhone : MonoBehaviour
                 hintUI.SetActive(true);
             }
             if(other.GetComponent<MyControllerInput>().sideButtonState_bool){
+                pickUpSFX.Play();
                 transform.parent = other.gameObject.transform;
                 transform.localScale = adustedScale;
                 transform.localRotation = Quaternion.Euler(adustedRotation);

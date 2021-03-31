@@ -12,9 +12,13 @@ public class MyGiveBeerrSub : MonoBehaviour
     public Text _backText;
     public Text _frontText;
 
+    public AudioSource asource;
+    public AudioClip clip;
 
     public void SetSub(bool value){
         if(value == true){
+            asource.clip = clip;
+            asource.Play();
             _backText.text = sentence;
             _frontText.text = sentence;
         }else{

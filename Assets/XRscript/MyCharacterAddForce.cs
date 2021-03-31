@@ -9,10 +9,11 @@ public class MyCharacterAddForce : MonoBehaviour
 
     private Rigidbody rb;
 
-    public MySubtiteController mySubtiteController;
+    public MySubtiteController2 mySubtiteController;
 
     public MySubtiteController mySubtiteControllerInWater;
     
+    public float subDelayTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,11 @@ public class MyCharacterAddForce : MonoBehaviour
     // Update is called once per frame
     public void AddForce(){
         rb.AddForce(forceMag);
+        StartCoroutine(SubDelay());
+    }
+
+    IEnumerator SubDelay(){
+        yield return new WaitForSeconds(subDelayTime);
         mySubtiteControllerInWater.isStart = true;
     }
 

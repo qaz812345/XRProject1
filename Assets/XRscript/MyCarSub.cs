@@ -8,6 +8,10 @@ public class MyCarSub : MonoBehaviour
     public bool isStart = false;
     public string[] sentences;
 
+    public float[] stayTime;
+    public AudioSource longTalkAudioSource;
+    public AudioClip[] clips;
+
      public float startDelayTime;
     public float delayTime;
 
@@ -24,6 +28,8 @@ public class MyCarSub : MonoBehaviour
     public delegate void EndTalkDelegate();
 
     public event EndTalkDelegate EndTalkHandler;
+
+    public MyAIIKcontroller aIIKcontroller;
 
 
     private int index=0;
@@ -45,20 +51,30 @@ public class MyCarSub : MonoBehaviour
 
     IEnumerator startPlay(){
         yield return new WaitForSeconds (startDelayTime);
+        longTalkAudioSource.clip = clips[0];
+        longTalkAudioSource.Play();
         foreach(string s in sentences){
             _backText.text = s;
             _frontText.text = s;
-            if(index == 1){
+            if(index == 2){
                 carsController.IsStart = true;
+                aIIKcontroller.IsLookAt = true;
             }
+           
             if(index == 4){
+                longTalkAudioSource.clip = clips[2];
+                longTalkAudioSource.Play();
                 carController.nextWayPoint = true;
             }
-            yield return new WaitForSeconds(delayTime);
-            if(index == 3){
+             if(index == 3){
+                longTalkAudioSource.clip = clips[1];
+                longTalkAudioSource.Play();
+                yield return new WaitForSeconds(7f);
                 _audio.Play();
-                yield return new WaitForSeconds(2.5f);
+                 aIIKcontroller.IsLookAt = false;
+               
             }
+            yield return new WaitForSeconds(stayTime[index]);
             index++;
         }
         _backText.text = "";
