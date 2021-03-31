@@ -6344,10 +6344,50 @@ PrefabInstance:
       propertyPath: deactivateOnDestroy
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1044351306432893920, guid: 850eedc71c0dc7e4da94c2c524ed8e8f,
+        type: 3}
+      propertyPath: actionSet.actionSetPath
+      value: /actions/buggy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044351306432893922, guid: 850eedc71c0dc7e4da94c2c524ed8e8f,
+        type: 3}
+      propertyPath: sideButton_bool.actionPath
+      value: /actions/buggy/in/Brake
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044351306432893922, guid: 850eedc71c0dc7e4da94c2c524ed8e8f,
+        type: 3}
+      propertyPath: touchpad_vector2.actionPath
+      value: /actions/buggy/in/Steering
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044351306432893922, guid: 850eedc71c0dc7e4da94c2c524ed8e8f,
+        type: 3}
+      propertyPath: triggerButton_vector1.actionPath
+      value: /actions/buggy/in/Throttle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044351306739759892, guid: 850eedc71c0dc7e4da94c2c524ed8e8f,
+        type: 3}
+      propertyPath: sideButton_bool.actionPath
+      value: /actions/buggy/in/Brake
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044351306739759892, guid: 850eedc71c0dc7e4da94c2c524ed8e8f,
+        type: 3}
+      propertyPath: touchpad_vector2.actionPath
+      value: /actions/buggy/in/Steering
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044351306739759892, guid: 850eedc71c0dc7e4da94c2c524ed8e8f,
+        type: 3}
+      propertyPath: triggerButton_vector1.actionPath
+      value: /actions/buggy/in/Throttle
+      objectReference: {fileID: 0}
     - target: {fileID: 1044351306739759895, guid: 850eedc71c0dc7e4da94c2c524ed8e8f,
         type: 3}
       propertyPath: deactivateOnDestroy
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044351306739759895, guid: 850eedc71c0dc7e4da94c2c524ed8e8f,
+        type: 3}
+      propertyPath: actionSet.actionSetPath
+      value: /actions/buggy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850eedc71c0dc7e4da94c2c524ed8e8f, type: 3}
